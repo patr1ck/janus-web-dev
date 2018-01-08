@@ -1,0 +1,14 @@
+- hosts: backend
+  roles:
+    - nginx
+    - mysql
+    - php
+    - postfix
+    - sbaerlocher.wp-cli
+    - wordpress
+  user: vagrant
+
+- hosts: frontend
+  roles:
+    - nginx
+  user: vagrant

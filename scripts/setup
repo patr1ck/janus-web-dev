@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pushd ansible
+ansible-playbook -i inventory/hosts.ini playbook.yml
+popd

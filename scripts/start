@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pushd backend
+vagrant up
+cd ../frontend
+vagrant up
+popd

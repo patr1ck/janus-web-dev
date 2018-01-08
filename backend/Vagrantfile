@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+required_plugins = %w( vagrant-hostsupdater )
+required_plugins.each do |plugin|
+  system "vagrant plugin install #{plugin}" unless Vagrant.has_plugin? plugin
+end
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "envimation/ubuntu-xenial"
+  config.vm.hostname = "backend-wp.test"
+  config.vm.network :private_network, ip: "192.168.3.101"
+  config.vm.network :forwarded_port, guest: 80, host: 8181
+
+  config.vm.provision "shell" do |s|
+    ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
+    s.inline = <<-SHELL
+      sudo apt-get update
+      sudo apt-get install -y python python-simplejson
+      echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
+    SHELL
+  end
+
+end
