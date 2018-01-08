@@ -15,7 +15,7 @@ It is very similar to the [Postlight WordPress + React Starter Kit](https://gith
 
 Scripts for controlling the VMs are included in `/scripts`. All that's required to setup both instances is running the `start` and then `setup` scripts.
 
-**Note**: The first-run of `start` may take some time depending on your internet connection, as it has to download a 130MB VM. `start` also requires your admin password, as it will add an `/etc/hosts` entries for the VMs. (They will be accessible at `backend-wp.test` and `frontend-next.test`)
+**Note**: The first-run of `start` may take some time depending on your internet connection, as it has to download a 130MB VM. `start` also requires your admin password, as it will add an `/etc/hosts` entries for the VMs.
 
 
 ```
