@@ -6,7 +6,15 @@
     "scripts": {
         "dev": "node server.js",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "docker:build": "docker build -t frontend .",
+        "docker:clean": "docker rm -f frontend || true",
+        "docker:run": "docker run -p 3000:3000 --name frontend frontend",
+        "docker:stop": "docker stop frontend",
+        "docker:start": "docker start frontend && yarn run docker:logs",
+        "docker:logs": "docker logs -f frontend",
+        "deploy":
+            "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
     },
     "keywords": [],
     "author": "",
@@ -14,9 +22,8 @@
     "dependencies": {
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
-        "next": "^4.2.1",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "next": "latest",
+        "react": "^16.0.0"
     },
     "devDependencies": {
         "autoprefixer": "7.1.5",
@@ -28,6 +35,7 @@
         "postcss-easy-import": "^3.0.0",
         "postcss-loader": "^2.0.7",
         "raw-loader": "^0.5.1",
+        "react-dom": "^16.2.0",
         "sass-loader": "^6.0.6",
         "webpack": "^3.10.0"
     }

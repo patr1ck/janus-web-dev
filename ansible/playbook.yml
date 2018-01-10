@@ -7,8 +7,3 @@
     - sbaerlocher.wp-cli
     - wordpress
   user: vagrant
-
-- hosts: frontend
-  roles:
-    - nginx
-  user: vagrant

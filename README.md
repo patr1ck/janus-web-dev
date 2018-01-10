@@ -6,10 +6,10 @@ It is very similar to the [Postlight WordPress + React Starter Kit](https://gith
 
 ## Requirements
 
-* Vagrant
-* VirtualBox
-* An SSH key in `~/.ssh/id_rsa.pub`
-* Ansible
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [An SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) in `~/.ssh/id_rsa.pub`
+* [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html)
 
 ## Setup
 

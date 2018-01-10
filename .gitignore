@@ -3,3 +3,6 @@
 
 backend/.vagrant
 frontend/.vagrant
+
+.next
+node_modules
